@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "../Css/Header.css";
+import { Store } from "../Store";
 import SearchIcon from "@mui/icons-material/Search";
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import DehazeIcon from "@mui/icons-material/Dehaze";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 
 function Header() {
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart, userInfo } = state;
   return (
     <div className="header">
       <div className="header__left">
@@ -26,10 +29,22 @@ function Header() {
 
       <div className="header__right">
         <div className="airban">
-          <Link to='/login' >Log In</Link>
+          <Link to="/login">Log In</Link>
         </div>
-        <div className="icon">
-          <AddShoppingCartIcon />
+        <div className="icon" >
+          <Link to="/cart">
+            {/* <div className="icon">
+              <AddShoppingCartIcon />
+            </div> */}
+            <span style={{color:'black'}} className="cart-count-lable">
+              {cart.cartItems.length > 0 && (
+                <span style={{ color: "black" }}>
+                  
+                  {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
+                </span>
+              )}
+            </span>
+          </Link>
         </div>
         <div className="two_icon">
           <DehazeIcon />

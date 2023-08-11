@@ -1,9 +1,8 @@
 import './App.css';
-import Header from './Component/Header';
 import { BrowserRouter, Route,Routes } from 'react-router-dom';
-import ProductCard from './Component/ProductCard';
 import LoginComponent from './Component/LoginComponent';
 import Registration from './Component/Registration';
+import HomeScreen from './Screen/HomeScreen';
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
         <Routes>
           <Route path='/login' element={ <LoginComponent /> } />
           <Route path='/registration' element={ <Registration /> } />
-          <Route path='/' element={ <ProductCard /> } />
+          <Route path='/' element={ <HomeScreen /> } />
         </Routes>
         
       </BrowserRouter>
