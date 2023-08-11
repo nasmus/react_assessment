@@ -1,0 +1,25 @@
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 20px;
+  }
+  
+  .product-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .product-card img {
+    max-width: 100%;
+  }
+  
+  .product-card h3 {
+    margin: 10px 0;
+  }
+  
+  .product-card p {
+    font-weight: bold;
+  }
+  
