@@ -1,0 +1,18 @@
+{
+    "product": [
+      { "id": 1, "name": "Product 1", "price": 10.99, "image": "product1.jpg" },
+      { "id": 2, "name": "Product 1", "price": 14.99, "image": "product1.jpg" },
+      { "id": 3, "name": "Product 1", "price": 15.99, "image": "product1.jpg" },
+      { "id": 4, "name": "Product 1", "price": 16.99, "image": "product1.jpg" },
+      { "id": 5, "name": "Product 1", "price": 18.99, "image": "product1.jpg" },
+      { "id": 6, "name": "Product 1", "price": 22.99, "image": "product1.jpg" },
+      { "id": 7, "name": "Product 1", "price": 45.99, "image": "product1.jpg" },
+      { "id": 8, "name": "Product 1", "price": 23.99, "image": "product1.jpg" },
+      { "id": 9, "name": "Product 1", "price": 19.99, "image": "product1.jpg" }
+    ],
+    "comments": [
+      { "id": 1, "body": "some comment", "postId": 1 }
+    ],
+    "profile": { "name": "typicode" }
+  }
+  
