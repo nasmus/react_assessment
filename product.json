@@ -1,18 +1,117 @@
 {
-    "product": [
-      { "id": 1, "name": "Product 1", "price": 10.99, "image": "product1.jpg" },
-      { "id": 2, "name": "Product 1", "price": 14.99, "image": "product1.jpg" },
-      { "id": 3, "name": "Product 1", "price": 15.99, "image": "product1.jpg" },
-      { "id": 4, "name": "Product 1", "price": 16.99, "image": "product1.jpg" },
-      { "id": 5, "name": "Product 1", "price": 18.99, "image": "product1.jpg" },
-      { "id": 6, "name": "Product 1", "price": 22.99, "image": "product1.jpg" },
-      { "id": 7, "name": "Product 1", "price": 45.99, "image": "product1.jpg" },
-      { "id": 8, "name": "Product 1", "price": 23.99, "image": "product1.jpg" },
-      { "id": 9, "name": "Product 1", "price": 19.99, "image": "product1.jpg" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
-  
+  "product": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "price": 10.99,
+      "image": "product1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Product 1",
+      "price": 14.99,
+      "image": "product1.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Product 1",
+      "price": 15.99,
+      "image": "product1.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Product 1",
+      "price": 16.99,
+      "image": "product1.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Product 1",
+      "price": 18.99,
+      "image": "product1.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Product 1",
+      "price": 22.99,
+      "image": "product1.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Product 1",
+      "price": 45.99,
+      "image": "product1.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Product 1",
+      "price": 23.99,
+      "image": "product1.jpg"
+    },
+    {
+      "id": 9,
+      "name": "Product 1",
+      "price": 19.99,
+      "image": "product1.jpg"
+    },
+    {
+      "productName": "shakil",
+      "image": {},
+      "price": "234",
+      "id": 10
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "shakil",
+      "Phone": "01620563656",
+      "isAdmin": true,
+      "password": "shakil123"
+    },
+    {
+      "id": 2,
+      "name": "shuvo",
+      "Phone": "01620563646",
+      "isAdmin": false,
+      "password": "shuvo123"
+    },
+    {
+      "name": "siam",
+      "phone": "01732546354",
+      "password": "12345",
+      "isAdmin": false,
+      "id": 6
+    },
+    {
+      "name": "sshoab",
+      "phone": "01723456787",
+      "password": "12345",
+      "isAdmin": false,
+      "id": 7
+    },
+    {
+      "name": "jarif",
+      "phone": "01720563656",
+      "password": "12345",
+      "isAdmin": false,
+      "id": 8
+    }
+  ],
+  "order": [
+    {
+      "id":1,
+      "name": "t-shart",
+      "quantity":3,
+      "price":13,
+      "isPaid":true
+    },
+    {
+      "id":2,
+      "name": "belt",
+      "quantity":2,
+      "price":135,
+      "isPaid":true
+    }
+  ]
+}

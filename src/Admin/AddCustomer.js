@@ -1,30 +1,26 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 import axios from "axios";
-import { Link, useNavigate } from 'react-router-dom';
-import Header from "./Header";
+import { Link, useNavigate } from "react-router-dom";
 
-function Registration() {
+function AddCustomer() {
   const navigate = useNavigate();
-  const [name,setName] = useState('');
-  const [phone,setPhone] = useState('');
-  const [password, setPassword] = useState('')
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
 
   const submitHandle = async (e) => {
     e.preventDefault();
-    const { data } = await axios.post('http://localhost:3030/users', {
+    const { data } = await axios.post("http://localhost:3030/users", {
       name,
       phone,
       password,
-      isAdmin:false
-  });
-  navigate('/');
-  }
-  
-  return (
-    <div>
-      <Header />
-      <form onSubmit={submitHandle} method="POST">
+      isAdmin: false,
+    });
+    navigate("/admin/customer");
+  };
+  return <div>
+    <form onSubmit={submitHandle} method="POST">
         <label for="username">Phone Number</label>
         <input type="text" name="phone" onChange={(e) => setPhone(e.target.value)}  />
         <label for="username" >name</label>
@@ -33,8 +29,7 @@ function Registration() {
         <input type="password" onChange={(e) => setPassword(e.target.value)} name="password" />
         <Button type="submit" >upload</Button>
       </form>
-    </div>
-  );
+  </div>;
 }
 
-export default Registration;
+export default AddCustomer;

@@ -1,17 +1,15 @@
 import React,{useReducer,useContext,useEffect} from 'react'
 import Header from '../Component/Header'
-import { useNavigate, useParams } from 'react-router-dom';
-import products from '../Data/product'
+import {  useParams } from 'react-router-dom';
 import { Store } from '../Store';
 import axios from 'axios';
-import { isContentEditable } from '@testing-library/user-event/dist/utils';
 
 const reducer = (state,action) => {
   switch(action.type){
     case 'FATCH_REQUEST':
-      return{...state, loading:true};
+      return{...state,};
     case 'FATCH_SUCCESS':
-      return{...state, product: action.payload, loading:false };
+      return{...state, product: action.payload };
     case 'FATCH_FAILLED':
       return{...state, loading:false, error:action.payload};
     default:
@@ -20,16 +18,18 @@ const reducer = (state,action) => {
 }
 
 function ProductDetailsScreen() {
+  // bring data from react context api
+  const {state, dispatch: ctxDispatch} = useContext(Store);
+  const { cart } = state;
 
-  const [{loading, error, product}, dispatch] = useReducer( (reducer),{
+  const [{ error, product}, dispatch] = useReducer( (reducer),{
     product:[],
     error:'',
-    loading:true
   })
     const params = useParams();
     const { id } =params;
-    console.log(products);
 
+    // product get from api using product id
     useEffect(()=>{
       const fatchData = async() => {
         dispatch({ type:'FATCH_REQUEST' })
@@ -42,11 +42,9 @@ function ProductDetailsScreen() {
         
       };
       fatchData();
-    },[id])
+    },[id,error])
 
-    // bring data from react context api
-    const {state, dispatch: ctxDispatch} = useContext(Store);
-    const { cart } = state;
+    
     
 
 

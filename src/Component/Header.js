@@ -28,27 +28,32 @@ function Header() {
       </div>
 
       <div className="header__right">
-        <div className="airban">
-          <Link to="/login">Log In</Link>
-        </div>
-        <div className="icon" >
+        {userInfo ? (
+          <div className="two_icon">
+            {userInfo.phone}
+            <AccountCircleIcon className="big" />
+          </div>
+        ) : (
+          <div className="airban">
+            <Link to="/login">Log In</Link>
+          </div>
+          
+        )}
+
+        <div className="icon">
           <Link to="/cart">
-            {/* <div className="icon">
+            <div className="icon">
               <AddShoppingCartIcon />
-            </div> */}
-            <span style={{color:'black'}} className="cart-count-lable">
+              <span style={{ color: "black" }} >
               {cart.cartItems.length > 0 && (
                 <span style={{ color: "black" }}>
-                  
                   {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                 </span>
               )}
             </span>
+            </div>
+            
           </Link>
-        </div>
-        <div className="two_icon">
-          <DehazeIcon />
-          <AccountCircleIcon className="big" />
         </div>
       </div>
     </div>
