@@ -16,7 +16,7 @@ import OrderDetails from './Admin/OrderDetails';
 function App() {
   return (
     <div className="app">
-      
+      {/* All app Routes */}
       <BrowserRouter>
         <Routes>
           <Route path='/login' element={ <LoginComponent /> } />

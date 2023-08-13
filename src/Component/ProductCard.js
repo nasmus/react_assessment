@@ -6,12 +6,12 @@ import { Link } from "react-router-dom";
 
 function ProductCard(props) {
   const [product]= useState(props);
-  //const {product} = props
+  //data access from context api store
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const {
     cart: { cartItems },
   } = state;
-
+  //product add into the cart
   const addToCartHandeler = async (item) => {
     const existItem = cartItems.find((x) => x.id === product.id);
     const quantity = existItem ? existItem.quantity + 1 : 1;

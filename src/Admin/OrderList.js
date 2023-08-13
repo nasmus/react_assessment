@@ -2,13 +2,24 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Sidebar from "../Component/Sidebar";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function OrderList() {
+  const navigate = useNavigate()
   const [order, setOrder] = useState([]);
+
+  //checking admis user information 
+  useEffect(() => {
+    const item = JSON.parse(localStorage.getItem('userInfo'))
+    if(!item){
+      navigate('/login')
+    }
+  },[navigate])
+
+  //Order list
   useEffect(() => {
     const fatchData = async () => {
-      const { data } = await axios.get(`http://localhost:3030/order`);
+      const { data } = await axios.get(`https://my-json-server.typicode.com/nasmus/json_server/order`);
       setOrder(data);
     };
     fatchData();
@@ -16,13 +27,14 @@ function OrderList() {
   return (
     <div>
       <Sidebar />
+      <h1 style={{display: "flex", justifyContent: "center"}} >Order List</h1>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <table>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>price</th>
-            <th>quantity</th>
+            <th style={{padding:'5px'}}><h1>ID</h1></th>
+            <th style={{padding:'5px'}}><h1>Name</h1></th>
+            <th style={{padding:'5px'}}><h1>price</h1></th>
+            <th style={{padding:'5px'}}><h1>quantity</h1></th>
           </tr>
           {order.map((item, index) => {
             return (

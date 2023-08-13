@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useReducer, useState } from "react";
 import "../Css/SellerDashboard.css";
 import Sidebar from "../Component/Sidebar";
 import axios from "axios";
-import { Store } from "../Store";
+import { useNavigate } from "react-router-dom";
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import AddAlertIcon from "@mui/icons-material/AddAlert";
 import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
@@ -12,12 +12,21 @@ import BatchPredictionIcon from '@mui/icons-material/BatchPrediction';
 
 
 function DashBoardScreen() {
+  const navigate = useNavigate();
   const [data,setData] = useState([])
+
+  //checking admis user information 
+  useEffect(() => {
+    const item = JSON.parse(localStorage.getItem('userInfo'))
+    if(!item){
+      navigate('/login')
+    }
+  },[navigate])
 
   //Proudct count
   useEffect(() => {
     const fatchData = async () => {
-        const { data } = await axios.get(`http://localhost:3030/users/${1}`);
+        const { data } = await axios.get(`https://my-json-server.typicode.com/nasmus/json_server/users/${1}`);
         setData(data)
     };
     fatchData();
@@ -40,9 +49,6 @@ function DashBoardScreen() {
           </div>
           <div className="Order_card_1">
             <div className="left">
-              {/* {totalOrder.map((item, index) => {
-                if (userInfo._id === item._id) return <h1>{item.quentity}</h1>;
-              })} */}
               <p>Product Orders</p>
             </div>
             <div className="right">
@@ -51,10 +57,6 @@ function DashBoardScreen() {
           </div>
           <div className="Order_card_1">
             <div className="left">
-              {/* {totalOrderPrice.map((orderItems) => {
-                if (userInfo._id === orderItems._id)
-                  return <h1>{orderItems.totalOrderPrice}</h1>;
-              })} */}
               <p>total selles</p>
             </div>
             <div className="right">
@@ -71,15 +73,7 @@ function DashBoardScreen() {
             </div>
           </div>
         </div>
-        <div className="product_and_order_section">
-          <div className="product">
-            
-            <h4>Monthly Selles</h4>
-          </div>
-          <div className="order">
-            <div className=""></div>
-          </div>
-        </div>
+      
       </div>
     </div>
   );

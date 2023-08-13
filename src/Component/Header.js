@@ -10,6 +10,12 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 function Header() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
+
+  //sign out
+  const signOutHandle=()=>{
+    ctxDispatch({ type: "USER_SIGNOUT" });
+    localStorage.removeItem("userInfo");
+  }
   return (
     <div className="header">
       <div className="header__left">
@@ -29,30 +35,31 @@ function Header() {
 
       <div className="header__right">
         {userInfo ? (
-          <div className="two_icon">
-            {userInfo.phone}
-            <AccountCircleIcon className="big" />
-          </div>
+          <>
+            <div className="two_icon">
+              {userInfo.phone}
+              <AccountCircleIcon className="big" />
+            </div>
+            <div>
+              <Link to="/" onClick={signOutHandle} >Log Out</Link>
+            </div>
+          </>
         ) : (
           <div className="airban">
             <Link to="/login">Log In</Link>
           </div>
-          
         )}
 
         <div className="icon">
           <Link to="/cart">
-            <div className="icon">
-              <AddShoppingCartIcon />
-              <span style={{ color: "black" }} >
+            <AddShoppingCartIcon />
+            <span style={{ color: "black" }}>
               {cart.cartItems.length > 0 && (
                 <span style={{ color: "black" }}>
                   {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                 </span>
               )}
             </span>
-            </div>
-            
           </Link>
         </div>
       </div>

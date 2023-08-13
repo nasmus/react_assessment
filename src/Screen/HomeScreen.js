@@ -27,7 +27,7 @@ function HomeScreen() {
     const fatchData = async() => {
       dispatch({ type:'FATCH_REQUEST' })
       try {
-        const result = await axios.get(`http://localhost:3030/product`);
+        const result = await axios.get(`https://my-json-server.typicode.com/nasmus/json_server/product`);
         dispatch({type:'FATCH_SUCCESS', payload:result.data})
       } catch (err) {
         dispatch({ type: 'FATCH_FAILLED', payload:err.message })

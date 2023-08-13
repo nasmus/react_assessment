@@ -11,11 +11,9 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.4.0",
-    "bootstrap": "^5.3.1",
     "json-server": "^0.17.0",
     "logger": "^0.0.1",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.8.0",
     "react-dom": "^18.2.0",
     "react-navigation": "^4.4.4",
     "react-router-dom": "^6.15.0",
@@ -27,7 +25,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "json":"json-server --watch product.json --port 3030"
+    "json": "json-server --watch product.json --port 3030"
   },
   "eslintConfig": {
     "extends": [
