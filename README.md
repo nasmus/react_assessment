@@ -13,3 +13,8 @@ library list
     3.axios
     4.react navigation
     5.json-server
+
+i use jsom-server for localhost rest api and server for github pages
+apis Link:https://my-json-server.typicode.com/nasmus/json_server
+
+#thank you so much for give me this opportunity
