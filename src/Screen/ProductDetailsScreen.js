@@ -51,7 +51,7 @@ function ProductDetailsScreen() {
         style={{ display: "flex", alignItems: "center",justifyContent:'center', paddingTop: "60px" }}
       >
         <div>
-          <img src={product.image}  />
+          <img src={`/image/${product.image}`} alt={product.name}  />
         </div>
         <div>
           <h1>{product.name}</h1>
